@@ -49,7 +49,10 @@ app.get ('/register',(req,res)=> {
 
 })
 
+app.get ('/crear_cliente',(req,res)=> {
+    res.render('crear_cliente');
 
+})
 // 10. registro (acá capturo los datos del formulario)
 
 app.post('/register', async (req, res) => {
