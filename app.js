@@ -163,6 +163,34 @@ app.get('/logout', function (req, res) {
 });
 
 
+// ruta crear clientes
+app.post ("/crear_cliente", async(req,res)=>{
+
+    const idcliente= req.body.idcliente;
+    const nombre= req.body.nombre;
+    const apellido = req.body.apellido;
+    const telefono= req.body.telefono;
+    const correo= req.body.correo;
+
+    connection.query('INSERT INTO clientes SET ?', {idcliente:idcliente, nombre:nombre, apellido:apellido, telefono:telefono, correo:correo},
+        async(error, results)=>{
+
+            if(error){
+                console.log (error);
+            }
+            else{
+                console.log("EL REGISTRO HA SIDO EXITOSO")
+            }
+        }
+
+
+      )
+
+})
+
+
+
+
 app.listen(3000, (req, res)=>{
     console.log('SERVER RUNNING IN http://localhost:3000');
 }) 
