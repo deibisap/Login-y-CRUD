@@ -53,6 +53,11 @@ app.get ('/crear_cliente',(req,res)=> {
     res.render('crear_cliente');
 
 })
+
+app.get ('/lista_clientes',(req,res)=> {
+    res.render('lista_clientes');
+
+})
 // 10. registro (acá capturo los datos del formulario)
 
 app.post('/register', async (req, res) => {
@@ -176,18 +181,38 @@ app.post ("/crear_cliente", async(req,res)=>{
         async(error, results)=>{
 
             if(error){
-                console.log (error);
+                console.log(error);
+            }else{
+                res.render('crear_cliente', {
+                    alert:true,
+                    alertTitle: "Registro de clientes",
+                    alertMessage: "!El registro del cliente ha sido exitoso!",
+                    alertIcon: 'success',
+                    showConfirmButton:false,
+                    timer: 1500,
+                    ruta:" "
+                })
+                 
             }
-            else{
-                console.log("EL REGISTRO HA SIDO EXITOSO")
+    })
+       
+});
+
+// ruta listar clientes
+
+app.get ("/clientes", async(req,res)=>{
+
+   
+    connection.query('SELECT * FROM clientes', async(error, results)=>{
+
+            if(error){
+                console.log(error);
+            }else{
+                res.send(results)
             }
-        }
-
-
-      )
-
-})
-
+    })
+       
+});
 
 
 
