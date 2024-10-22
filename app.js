@@ -208,7 +208,7 @@ app.get ("/clientes", async(req,res)=>{
             if(error){
                 console.log(error);
             }else{
-                res.send(results)
+                res.render('clientes',{results:results});
             }
     })
        
