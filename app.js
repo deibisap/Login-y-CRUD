@@ -213,7 +213,7 @@ app.get ("/clientes", async(req,res)=>{
     })
        
 });
-
+//RUTA PARA EDITAR REGISTROS
 
 
 app.listen(3000, (req, res)=>{
