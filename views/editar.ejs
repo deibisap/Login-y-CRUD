@@ -5,34 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Crear cliente</title>
+    <title>Editar cliente</title>
 </head>
+
 <body>
 
-    <body>
-        <div class="register-form">
-            <h1>Registro de clientes</h1>
-            <form action="/crear_cliente" method="POST">
-                
+   
+
+    <div class="register-form">
+
+            <h1>Editar clientes</h1>
+            <form action="/save" method="POST">
+               
                 <label for="idcliente">Cedula o NIT</label>
-                    <input type="text" name="idcliente" required tabindex="1" autofocus>  
+                    <input type="text" name="idcliente" hidden tabindex="1" autofocus>  
 
                 <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" required tabindex="2">
+                    <input type="text" name="nombre"  required tabindex="2">
 
                  <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" required tabindex="3">
+                    <input type="text" name="apellido"  required tabindex="3">
 
                 <label for="telefono">Telefono</label>
-                    <input type="text" name="telefono" required tabindex="4">
+                    <input type="text" name="telefono"  required tabindex="4">
                 
                 <label for="correo">E-mail</label>
-                    <input type="text" name="correo" required tabindex="5">     
+                    <input type="text" name="correo"  required tabindex="5">     
                   
                 <a href="/" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Save">           
-                </div>
+            </div>
             </form>		
-        </div>
+    </div>
+
+ 
+
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <% if (typeof alert != "undefined")  { %>
@@ -48,5 +54,6 @@
             })
             </script>
            <% } %>
+
 </body>
 </html>
