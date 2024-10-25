@@ -220,18 +220,7 @@ app.get ("/clientes", async(req,res)=>{
        
 });
 //RUTA PARA EDITAR REGISTROS
-app.get('editar/:idcliente', (req,res)=> {
-    const idcliente= req.params.idcliente;
-    connection.query('SELECT * FROM clientes WHEN idcliente=?', [idcliente], (error, results)=>{
-        if(error){
-            throw error;
-        }else{
-            res.render('editar', {user:results[0]})
-        }
-    } 
-    )
-}
-)
+
 
 
 app.listen(3000, (req, res)=>{
